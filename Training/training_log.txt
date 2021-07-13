@@ -1,0 +1,89 @@
+INFO-13/07/2021 10:55:22-Preprocessing starte from here************
+INFO-13/07/2021 10:55:22-Train_Test_Split Operation starts from here ******
+INFO-13/07/2021 10:55:22-Defining a function that will remove the outliers from the dataset ******
+INFO-13/07/2021 10:55:22-Defining a function that will Replace all the 0 (zero) in every column with null value
+INFO-13/07/2021 10:55:22-Defining a fuction which will check if any column has a standard deviation zero or not.
+        If it is zero then that column will be removed. The dispersion of the data points from the mean will be 0 because
+        actual value equals to mean, it means data is not deviates from mean. Values of that column are constant,
+        means whether the strength is good or bad, that values does not changing. It means that it has no impact on the 
+        target values. So we have to delete that column.
+INFO-13/07/2021 10:55:22-Checking the column one by one for standard deviation zero
+INFO-13/07/2021 10:55:22-Columns having zero standard deviation are dropped.
+INFO-13/07/2021 10:55:22-Checking in Cement _component_1 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Blast Furnace Slag _component_2 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Fly Ash _component_3 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Water_component_4 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Superplasticizer_component_5 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Coarse Aggregate_component_6 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Fine Aggregate_component_7 column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Age_day column for 0 (zero)
+INFO-13/07/2021 10:55:22-Checking in Concrete_compressive _strength column for 0 (zero)
+INFO-13/07/2021 10:55:22-Defining a fuction which will fill all the null values with mean by using KNNImputer ******
+INFO-13/07/2021 10:55:22-Creating an object for KNNImputer and we are taking 3 nearest neighbors
+INFO-13/07/2021 10:55:22-Fitting the data
+INFO-13/07/2021 10:55:22-Each sample's missing values are imputed using the mean value from
+            3 nearest neighbors found in the data set
+INFO-13/07/2021 10:55:22-Creating a separate dataframe that will store the updated data set with mean values in place of null values
+INFO-13/07/2021 10:55:22-Rounding the values such that after decimal there is only two digits present
+INFO-13/07/2021 10:55:22-Rounding complete
+INFO-13/07/2021 10:55:22-For removing the outlier, quantile function is used from Numpy library
+INFO-13/07/2021 10:55:22-For Cement _component_1 column :
+INFO-13/07/2021 10:55:22-First qunatile position is: 192.0
+INFO-13/07/2021 10:55:22-Third qunatile position is: 350.0
+INFO-13/07/2021 10:55:22-Inter Quantile Range is 158.0
+INFO-13/07/2021 10:55:22-Lower range value is: -45.0
+INFO-13/07/2021 10:55:22-Upper range value is: 587.0
+INFO-13/07/2021 10:55:22-For Blast Furnace Slag _component_2 column :
+INFO-13/07/2021 10:55:22-First qunatile position is: 83.73
+INFO-13/07/2021 10:55:22-Third qunatile position is: 177.0
+INFO-13/07/2021 10:55:22-Inter Quantile Range is 93.27
+INFO-13/07/2021 10:55:22-Lower range value is: -56.175
+INFO-13/07/2021 10:55:22-Upper range value is: 316.905
+INFO-13/07/2021 10:55:22-For Fly Ash _component_3 column :
+INFO-13/07/2021 10:55:22-First qunatile position is: 95.8
+INFO-13/07/2021 10:55:22-Third qunatile position is: 136.73
+INFO-13/07/2021 10:55:22-Inter Quantile Range is 40.92999999999999
+INFO-13/07/2021 10:55:22-Lower range value is: 34.40500000000001
+INFO-13/07/2021 10:55:22-Upper range value is: 198.12499999999997
+INFO-13/07/2021 10:55:22-For Water_component_4 column :
+INFO-13/07/2021 10:55:22-First qunatile position is: 164.9
+INFO-13/07/2021 10:55:22-Third qunatile position is: 192.9
+INFO-13/07/2021 10:55:22-Inter Quantile Range is 28.0
+INFO-13/07/2021 10:55:23-Lower range value is: 122.9
+INFO-13/07/2021 10:55:23-Upper range value is: 234.9
+INFO-13/07/2021 10:55:23-For Superplasticizer_component_5 column :
+INFO-13/07/2021 10:55:23-First qunatile position is: 6.8
+INFO-13/07/2021 10:55:23-Third qunatile position is: 11.3
+INFO-13/07/2021 10:55:23-Inter Quantile Range is 4.500000000000001
+INFO-13/07/2021 10:55:23-Lower range value is: 0.049999999999998046
+INFO-13/07/2021 10:55:23-Upper range value is: 18.050000000000004
+INFO-13/07/2021 10:55:23-For Coarse Aggregate_component_6 column :
+INFO-13/07/2021 10:55:23-First qunatile position is: 932.0
+INFO-13/07/2021 10:55:23-Third qunatile position is: 1028.4
+INFO-13/07/2021 10:55:23-Inter Quantile Range is 96.40000000000009
+INFO-13/07/2021 10:55:23-Lower range value is: 787.3999999999999
+INFO-13/07/2021 10:55:23-Upper range value is: 1173.0000000000002
+INFO-13/07/2021 10:55:23-For Fine Aggregate_component_7 column :
+INFO-13/07/2021 10:55:23-First qunatile position is: 729.0
+INFO-13/07/2021 10:55:23-Third qunatile position is: 824.0
+INFO-13/07/2021 10:55:23-Inter Quantile Range is 95.0
+INFO-13/07/2021 10:55:23-Lower range value is: 586.5
+INFO-13/07/2021 10:55:23-Upper range value is: 966.5
+INFO-13/07/2021 10:55:23-For Age_day column :
+INFO-13/07/2021 10:55:23-First qunatile position is: 7.0
+INFO-13/07/2021 10:55:23-Third qunatile position is: 56.0
+INFO-13/07/2021 10:55:23-Inter Quantile Range is 49.0
+INFO-13/07/2021 10:55:23-Lower range value is: -66.5
+INFO-13/07/2021 10:55:23-Upper range value is: 129.5
+INFO-13/07/2021 10:55:23-For Concrete_compressive _strength column :
+INFO-13/07/2021 10:55:23-First qunatile position is: 22.5075
+INFO-13/07/2021 10:55:23-Third qunatile position is: 44.52
+INFO-13/07/2021 10:55:23-Inter Quantile Range is 22.012500000000003
+INFO-13/07/2021 10:55:23-Lower range value is: -10.511250000000004
+INFO-13/07/2021 10:55:23-Upper range value is: 77.53875000000001
+INFO-13/07/2021 10:55:23-New dataset after removing the outliers is updated
+INFO-13/07/2021 10:55:23-Reading standardized data into dataframe
+INFO-13/07/2021 10:55:23-Separating Independent and dependent features into separate variables X and Y
+INFO-13/07/2021 10:55:23-Performing train_test_splt with 25% test_data size and 75% train_data size
+INFO-13/07/2021 10:55:23-Model Tuning and Model Training on various Algorithms operates here ******
+INFO-13/07/2021 10:58:32-127.0.0.1 - - [13/Jul/2021 10:58:32] "POST /training HTTP/1.1" 200 -
