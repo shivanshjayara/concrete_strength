@@ -1,3 +1,0 @@
-Concrete_Strength_Prediction
-
-@https://secure-eyrie-13669.herokuapp.com/
